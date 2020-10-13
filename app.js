@@ -37,7 +37,12 @@ inputRadios.forEach(input => {
     });
 });
 
+resetButton.addEventListener('click', () => {
+    captured = 0;
+    encountered = 0;
+    capturedScoreSpan.textContent = 0;
 
+});
 
 
 
