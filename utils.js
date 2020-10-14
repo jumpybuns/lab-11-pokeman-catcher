@@ -1,43 +1,43 @@
-import pokemonArray from './data.js';
+// import { pokeData } from './api.js';
 
-const POKEMON = 'POKEMON';
+// const inputRadios = document.querySelectorAll('input');
+// const POKEMON = 'POKEMON';
 
 
+// results_div.classlist.remove('hidden');
 
-export function getRandomPokeman(someArray) {
-    const index = Math.floor(Math.random() * someArray.length);
-    return someArray[index];
-}
+// for (let i = 0; i < inputRadios.length; i++) {
+//     radios[i].disabled = true;
+//     images[i].style.opacity = 0.5;
+// }
 
-export function removeCaughtPokeman(someId) {
-    for (let i = 0; i < someId.length; i++) {
-        someId.splice(i, 1);
+// let currentCapturedPokemon = e.target.value;
+// catch_results.textContent = `You captured ${currentCapturedPokemon}`;
+
+// const localStorageCaptured = get_localStorage(LOCALSTORAGE);
+
+// const checkLocalStorageCapture = findById(localStorageCaptured, currentCapturedPokemon);
+
+export function findById(someArray, someId) {
+    for (let i = 0; i < someArray.length; i++) {
+        const item = someArray[i];
+        if (item.id === someId) {
+            return item;
+        }
     }
 }
 
-export function getFromLocalStorage(key) {
-    const item = localStorage.getItem(key);
+// export function getFromLocalStorage(key) {
+//     const item = localStorage.getItem(key);
 
-    return JSON.parse(item);
-}
+//     return JSON.parse(item);
+// }
 
-export function setInLocalStorage(key, value) {
-    const stringyItem = JSON.stringify(value);
+// export function setInLocalStorage(key, value) {
+//     const stringyItem = JSON.stringify(value);
 
-    localStorage.setItem(key, stringyItem);
+//     localStorage.setItem(key, stringyItem);
 
-    return value;
-}
-
-export function seedAndGetProducts() {
-    let seed = (getFromLocalStorage(POKEMON));
-
-    if (!seed) {
-        const hardStringySeed = JSON.stringify(pokemonArray);
-
-        localStorage.setItem(POKEMON, hardStringySeed);
-        seed = pokemonArray;
-    }
-    return seed;
-}
+//     return value;
+// }
 

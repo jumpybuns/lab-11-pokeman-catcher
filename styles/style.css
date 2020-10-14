@@ -1,9 +1,13 @@
-
+@font-face {
+    font-family: 'pokemon';
+    src: url(../assets/Pokemon\ Solid.ttf);
+    font-style: var(--color1);
+  }
 body {
-    --color1: #ffffff;
-    --color2: #ffffff;
+    --color1: #e7e300;
+    --color2: #ff8d0a;
     --color3: #ffffff;
-    --color4: #ffffff;
+    --color4: #b2bd1a;
     --color5: #ffffff;
 
     /* https://coolors.co/generate and click export -> scss to get the colors to copy and paste below*/
@@ -24,104 +28,80 @@ body {
     --gutter: 30px;
     --footer-height: 25px;
     
-    font-family: 'Titillium Web', sans-serif;
+    font-family: 'pokemon', sans-serif;
     background-color: var(--color2);
+    background: url("../assets/background.JPG");
 }
 
-main {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: calc(var(--footer-height));
-}
-
-section {
-    background-color: var(--color5);
-    width: 1000px;
-    max-width: 80%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding-top: var(--gutter);
-    padding-bottom: var(--gutter);
-    margin-top: var(--gutter);
-    margin-bottom: var(--gutter);
-    border: solid 2px var(--color1);
-}
 
 header {
     display: flex;
+    background-color: teal;
     justify-content: flex-end;
-    background-color: var(--color3);
     height: var(--header-height);
     box-shadow: var(--shadow);
 }
 
-footer {
-    display: flex;
-    justify-content: flex-end;
-    background-color: var(--color3);
-    box-shadow: var(--shadow);
+#title {
+    grid-row: auto;
+    font-size: 2rem;
+    margin-right: 500px;
+    margin-left: 200px;
 }
 
+.captured-score {
+    position: relative;
+    justify-content: center;
+}
 
-h2 {
-    font-size: 1.8rem;
-    font-weight: bold;
+.flex-row {
+    position: relative;
+    color: rgb(0, 0, 0);
+    border: rgb(0, 0, 0));
+    border-width: thick;
+    font-size: 2rem;
+    font-weight: thin;
 }
 img {
+    border-radius: 4px;
+    background-color: #f4511e;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 28px;
+    padding: 20px;
     width: 200px;
-}
-.gutter-right {
-    margin-right: 20px;
-}
-
-.main-logo {
-    animation: pulse 5s infinite ease-in-out;
-}
-
-header img {
-    height: var(--header-height);
-}
-
-
-
-content {
-    width: 80%;
-}
-
-p {
-    margin: var(--gutter);
-}
-  
-footer {
-    position: fixed;
-    width: 100%;
-    bottom: 0;
-    height: var(--footer-height);
-    display: flex;
-    justify-content: flex-end;
-    background-color: var(--color3);
-    box-shadow: var(--shadow);
-}
-  
-  @keyframes pulse {
-    20% {
-      transform: rotate3d(-10, -10, -10, 50deg) scale(1.2);
-    }
-
-    40% {
-        transform: rotate3d(10, 10, -10, 50deg) scale(1);
-    }
-
-    60% {
-        transform: rotate3d(-10, 10, 10, 50deg) scale(1.2);
-      }
-
-    80% {
-        transform: rotate3d(10, 10, 10, 50deg) scale(1);
-    }
-
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 5px;
   }
+  
+    img span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+  }
+  
+    img span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+  }
+  
+    img:hover span {
+    padding-right: 25px;
+  }
+  
+    img:hover span:after {
+    opacity: 1;
+    right: 0;
+  }
+
+#reset-button {
+    position: center;
+    justify-content: center;
+}
