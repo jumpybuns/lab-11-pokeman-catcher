@@ -1,30 +1,162 @@
+/* eslint-disable no-undef */
 import { BAG } from '../constants.js';
 
-const resultsSpan = document.getElementById('results-span');
-const playAgainButton = document.getElementById('play-Again-Button');
+
+const playAgainButton = document.getElementById('play-again-button');
 
 const item = localStorage.getItem(BAG);
 const parsedItem = JSON.parse(item);
 
-resultsSpan.textContent = 'Your Results!' + item;
+const pokemonCaught = parsedItem.map((bagItem) => {
+    return bagItem.captured;
+});
 
-const pokemonCaught = [];
-const pokemonLabels = [];
+const pokemonLabels = parsedItem.map((bagItem) => {
+    return bagItem.name;
+});
+
+const pokemonEncountered = parsedItem.map((bagItem) => {
+    return bagItem.encountered;
+});
+
+
+playAgainButton.addEventListener('click', () => {
+
+    localStorage.clear();   
+    window.location = '../index.html';
+});
+
+
+
+const pokemonCaptured = [];
+const pokemonLabeled = [];
 const pokemonEncoutered = [];
 
 for (let i = 0; i < item.length; i++) {
     const bagItem = item[i];
 
-    pokemonCaught.push(bagItem.captured);
-    pokemonLabels.push(bagItem.name);
+    pokemonCaptured.push(bagItem.captured);
+    pokemonLabeled.push(bagItem.name);
     pokemonEncoutered.push(bagItem.encountered);
 
 } 
 
 playAgainButton.addEventListener('click', () => {
-    console.log('Play Again Clicked');
 
     localStorage.clear(0);
     window.location = '../index.html';
 
+});
+
+
+export function getFromLocalStorage(key) {
+    const item = localStorage.getItem(key);
+
+    return JSON.parse(item);
+}
+
+var ctx = document.getElementById('myChart').getContext('2d');
+// eslint-disable-next-line no-unused-vars
+var myChart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+        labels: pokemonLabels,
+        datasets: [{
+            label: '# of Pokemon Captured',
+            data: pokemonCaught,
+            backgroundColor: [
+                'rgba(255, 99, 132, 0.7)',
+                'rgba(54, 162, 235, 0.7)',
+                'rgba(255, 206, 86, 0.7)',
+                'rgba(75, 192, 192, 0.7)',
+                'rgba(153, 102, 255, 0.7)',
+                'rgba(255, 159, 64, 0.7)',
+                'rgba(255, 99, 132, 0.7)',
+                'rgba(54, 162, 235, 0.7)',
+                'rgba(255, 206, 86, 0.7)',
+                'rgba(75, 192, 192, 0.7)',
+                'rgba(153, 102, 255, 0.7)',
+                'rgba(255, 159, 64, 0.7)',
+                'rgba(255, 99, 132, 0.7)'
+            ],
+            borderColor: [
+                'rgba(255, 99, 132, 1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)',
+                'rgba(255, 159, 64, 1)',
+                'rgba(255, 99, 132, 1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)',
+                'rgba(255, 159, 64, 1)',
+                'rgba(255, 99, 132, 1)'
+            ],
+            borderWidth: 3
+        }]
+    },
+    options: {
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero: true
+                }
+            }]
+        }
+    }
+});
+
+var ctx2 = document.getElementById('anotherChart').getContext('2d');
+// eslint-disable-next-line no-unused-vars
+var anotherChart = new Chart(ctx2, {
+    type: 'bar',
+    data: {
+        labels: pokemonLabels,
+        datasets: [{
+            label: '# of Pokemon Encountered',
+            data: pokemonEncountered,
+            backgroundColor: [
+                'rgba(255, 99, 132, 0.7)',
+                'rgba(54, 162, 235, 0.7)',
+                'rgba(255, 206, 86, 0.7)',
+                'rgba(75, 192, 192, 0.7)',
+                'rgba(153, 102, 255, 0.7)',
+                'rgba(255, 159, 64, 0.7)',
+                'rgba(255, 99, 132, 0.7)',
+                'rgba(54, 162, 235, 0.7)',
+                'rgba(255, 206, 86, 0.7)',
+                'rgba(75, 192, 192, 0.7)',
+                'rgba(153, 102, 255, 0.7)',
+                'rgba(255, 159, 64, 0.7)',
+                'rgba(255, 99, 132, 0.7)'
+            ],
+            borderColor: [
+                'rgba(255, 99, 132, 1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)',
+                'rgba(255, 159, 64, 1)',
+                'rgba(255, 99, 132, 1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)',
+                'rgba(255, 159, 64, 1)',
+                'rgba(255, 99, 132, 1)'
+            ],
+            borderWidth: 3
+        }]
+    },
+    options: {
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero: true
+                }
+            }]
+        }
+    }
 });
