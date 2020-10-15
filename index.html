@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
-
+    <video autoplay muted loop id="myVideo">
+        <source src="assets/pokemon.mp4" type="video/mp4" height="100" width="100">
+    </video>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,9 +15,12 @@
 </head>
 
 <body>
+    <video autoplay muted loop id="myVideo">
+        <source src="assets/pokemon.mp4" type="video/mp4">
+    </video>
     <header>
         <div id="score-container" class = "score-column">
-            <h3 id="Gotta">Gotta Catch 'Em All</h3>
+            <h3 id="Gotta">You Have to Catch Them All</h3>
         </div>
             <a id="results" href="/results/index.html">RESULTS</a>
         <br>
@@ -27,7 +32,7 @@
                 <div id = "turns-score">0</div>
     </section>
     <main>
-        <section id="title">
+
 
         </section>
         <section id="pokemon-big-container'">
@@ -57,7 +62,8 @@
 
         </section>
     </main>
-    <footer>
+    <footer>      
+ 
     </footer>
     <script type="module" src="images.js"></script>
     <script type="module" src="app.js"></script>
