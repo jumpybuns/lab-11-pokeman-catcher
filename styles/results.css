@@ -1,6 +1,6 @@
 @font-face {
     font-family: 'pokemon';
-    src: url(../assets/Orbitron-VariableFont_wght.ttf);
+    src: url(../assets/TinyIslanders-nOYg.ttf);
     font-style: var(--color1);
     font-weight: var(--shadow);
     font-weight: bolder;
@@ -59,12 +59,11 @@ canvas {
     background-color: #4CAF50; /* Green */
     border: none;
     color: white;
-    padding: 15px 32px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
     font-family: 'pokemon';
-    font-size: 16px;
+    font-size: 30px;
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
 }
   

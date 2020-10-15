@@ -84,6 +84,9 @@ resetButton.addEventListener('click', () => {
     captured = 0;
     encountered = 0;
     turnsSpan.textContent = 0;
+    capturedSpan.textContent = 0;
+    encounteredSpan.textContent = 0;
+
 
 });
 
