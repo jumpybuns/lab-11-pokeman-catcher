@@ -94,7 +94,7 @@ var myChart = new Chart(ctx, {
                 'rgba(255, 159, 64, 1)',
                 'rgba(255, 99, 132, 1)'
             ],
-            borderWidth: 3
+            borderWidth: 20
         }]
     },
     options: {
@@ -147,7 +147,7 @@ var anotherChart = new Chart(ctx2, {
                 'rgba(255, 159, 64, 1)',
                 'rgba(255, 99, 132, 1)'
             ],
-            borderWidth: 3
+            borderWidth: 20
         }]
     },
     options: {

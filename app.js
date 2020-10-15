@@ -4,8 +4,9 @@ import { findById } from './utils.js';
 import { BAG } from './constants.js';
 
 const resetButton = document.querySelector('#reset-button');
+const capturedSpan = document.getElementById('captured-score');
+const encounteredSpan = document.getElementById('encountered-score');
 const pokeImages = document.querySelectorAll('img');
-const encounteredScoreSpan = document.getElementById('encountered-score');
 const turnsSpan = document.getElementById('turns-score');
 const inputRadios = document.querySelectorAll('input');
 const pokeResults = [];
@@ -53,6 +54,8 @@ let turns = 0;
 
 for (let i = 0; i < inputRadios.length; i++) {
     inputRadios[i].addEventListener('change', (e) => {
+        captured++;
+        encountered = encountered + 3;
         turns++;
         if (turns === 10) {
             setInLocalStorage(BAG, pokeResults);
@@ -61,6 +64,9 @@ for (let i = 0; i < inputRadios.length; i++) {
         }
         const capturedPokemon = findById(pokeData, Number(e.target.value));
         turnsSpan.textContent = turns;  
+        capturedSpan.textContent = captured;  
+        encounteredSpan.textContent = encountered;  
+
         const encounteredPokemon = Number(inputRadios[0].value);
         incrementEncountered(pokeResults, Number(inputRadios[0].value));
         incrementEncountered(pokeResults, Number(inputRadios[1].value));

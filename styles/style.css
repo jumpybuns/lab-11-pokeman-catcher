@@ -1,6 +1,6 @@
 @font-face {
     font-family: 'pokemon';
-    src: url(../assets/Staatliches-Regular.ttf);
+    src: url(../assets/Orbitron-VariableFont_wght.ttf);
     font-style: var(--color1);
     font-weight: var(--shadow);
     font-weight: bolder;
@@ -18,16 +18,25 @@ body {
     
     font-family: 'pokemon', sans-serif;
     background-color: var(--color2);
-  
+    background-image: url(../assets/POKEMON\ BLACK.jpg);
+    background-repeat: no-repeat;
+    background-size: 1300px 800px;
 }
 
 
 header {
     display: flex;
-    background-color: teal;
+    background-color: rgb(43, 43, 43);
     justify-content: flex-end;
     height: var(--header-height);
     box-shadow: var(--shadow);
+}
+
+#Gotta {
+    font-size: 3rem;
+    color: yellow;
+    border: var(--shadow);
+    border-width: thick;
 }
 
 #title {
@@ -45,7 +54,9 @@ header {
 
 }
 
-.captured-score {
+.score-container {
+    color: rgb(151, 151, 151);
+    font-size: 1.75rem;
     position: relative;
     justify-content: center;
 }
@@ -70,6 +81,8 @@ img {
     width: 200px;
     transition: all 0.5s;
     cursor: pointer;
+    opacity: 50;
+    animation-fill-mode: forwards;
 
   }
 
@@ -81,7 +94,7 @@ img:hover {
     margin-left: 500px;
     width: 200px;
     height: 50px;
-    background-color: #4CAF50; /* Green */
+    background-color: #b6b6b6; /* Green */
     border: none;
     color: white;
     padding: 15px 32px;
