@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
-
+    <video autoplay muted loop id="myVideo">
+        <source src="assets/pokemon.mp4" type="video/mp4" height="100" width="100">
+    </video>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,58 +11,53 @@
     <link rel="stylesheet" href="styles/reset.css">
     <link rel="stylesheet" href="styles/style.css">
     <link rel="stylesheet" href="styles/home.css">
-    <title>Pokeman-Catcher</title>
+    <title>pokemon-Catcher</title>
 </head>
 
 <body>
-    <header>
-        <div id="score-container" class = "score-column">
-            <h2>Score</h2>
-            <div class="flex-row">
-                <div class = "captured-score">
-                    <h1 id = "captured">Captured:</h3>
-                    <div id = "captured-score">0</div>
-
-                    <h1 id = "encountered">Encountered:</h3>
-                    <div id = "encountered-score">0</div>
-
-                </div>
-            </div>
-
-        </div>
-            <a href="/results/index.html">RESULTS</a>
-        <br>
-        <h2>Gotta Catch 'Em All</h2>
-    </header>
+    <video autoplay muted loop id="myVideo">
+        <source src="assets/pokemon.mp4" type="video/mp4">
+    </video>
+ 
+    <section id="turns">
+        <div class="flex-row">
+            <div class = "turns-score">
+                <h1 id = "turns">Turns:</h1>
+                <div id = "turns-score">0</div>
+    </section>
     <main>
-        <section id="title">
-            <h2>Pokeman</h2>
-            <h3>Gotta Catch 'Em All</h3>
+
+
         </section>
-        <section id="pokeman-big-container'">
-            <div class="pokeman-container">
+        <section id="pokemon-big-container'">
+            <div class="pokemon-container">
                 <label class="catcher">
-                    <input type="radio" name="pokeman"  value="" style="display: none;" checked/>
+                    <input type="radio" name="pokemon"  value="" style="display: none;" checked/>
                     <img src="" id="image1">
                 </label>
                 <label class="catcher">
-                    <input type="radio" name="pokeman" value="" style="display: none;" >
+                    <input type="radio" name="pokemon" value="" style="display: none;" >
                     <img src="" id="image2">
                 </label>
                 <label class="correct">
-                    <input type="radio" name="pokeman" value="" style="display: none;" >
+                    <input type="radio" name="pokemon" value="" style="display: none;" >
                     <img src="" id="image3">
+                    <div class="score-container">
+                        <h3 id = "encounters">Encounters:</h3>
+                        <div id = "encountered-score">0</div>
+                        <h3 id = "captures">Captures:</h3>
+                        <div id = "captured-score">0</div>
+                    </div>
                 </label>
             </div>
-            <!-- <button id="encounter-button">NEXT ENCOUNTER</button> -->
-            
+
             <button id="reset-button">RESET</button>
 
         </section>
     </main>
-    <footer>
+    <footer>      
+ 
     </footer>
-    <script type="module" src="images.js"></script>
     <script type="module" src="app.js"></script>
 </body>
 
